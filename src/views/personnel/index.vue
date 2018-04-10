@@ -96,7 +96,7 @@ export default {
         name: '张闯',
         code: '210111199006165311',
         company: '精准科技',
-        phone: '1861224316',
+        phone: '18512223234',
         entry_time: '2016-06-06',
         status: 1
       }]

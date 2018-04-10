@@ -60,7 +60,7 @@ export default {
       this.list = [{
         id: 1,
         name: '北京精准沟通传媒科技股份有限公司',
-        tax_code: '91110111697662767K'
+        tax_code: '91112131337662767K'
       }, {
         id: 2,
         name: '深圳腾讯计算机系统有限公司',
