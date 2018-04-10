@@ -94,7 +94,7 @@ export default {
       this.list = [{
         id: 1,
         name: '张闯',
-        code: '210111199006165311',
+        code: '210111198806165310',
         company: '精准科技',
         phone: '18512223234',
         entry_time: '2016-06-06',
