@@ -1,3 +1,5 @@
+[DEMO](http://hr.vueadmin.com/)
+
 ## Build Setup
 
 ``` bash
