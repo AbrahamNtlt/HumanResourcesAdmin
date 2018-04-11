@@ -63,6 +63,16 @@
             placeholder="选择日期">
           </el-date-picker>
         </el-form-item>
+        <el-form-item label="在职状态" label-width="80px">
+          <el-select v-model="form.status" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -83,7 +93,14 @@ export default {
         tax_code: ''
       },
       dialogTitle: null,
-      dialogFormVisible: false
+      dialogFormVisible: false,
+      options: [{
+        value: 1,
+        label: '在职'
+      }, {
+        value: 0,
+        label: '离职'
+      }]
     }
   },
   created() {

@@ -2,9 +2,14 @@
   <div class="app-container">
     <el-button type="primary" size="small" class="app-button" @click="createCompany">新增公司</el-button>
     <el-table :data="list" v-loading.body="listLoading" element-loading-text="Loading" border fit highlight-current-row>
-      <el-table-column label="公司名称">
+      <el-table-column label="公司全称">
         <template slot-scope="scope">
           {{scope.row.name}}
+        </template>
+      </el-table-column>
+      <el-table-column label="公司简称">
+        <template slot-scope="scope">
+          {{scope.row.small_name}}
         </template>
       </el-table-column>
       <el-table-column label="公司税号">
@@ -23,8 +28,11 @@
     </el-table>
     <el-dialog :title="dialogTitle" :visible.sync="dialogFormVisible">
       <el-form :model="form">
-        <el-form-item label="公司名称" label-width="80px">
+        <el-form-item label="公司全称" label-width="80px">
           <el-input v-model="form.name" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="公司简称" label-width="80px">
+          <el-input v-model="form.small_name" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item label="公司税号" label-width="80px">
           <el-input v-model="form.tax_code" auto-complete="off"></el-input>
@@ -46,6 +54,7 @@ export default {
       listLoading: true,
       form: {
         name: '',
+        small_name: '',
         tax_code: ''
       },
       dialogTitle: null,
@@ -60,10 +69,12 @@ export default {
       this.list = [{
         id: 1,
         name: '北京精准沟通传媒科技股份有限公司',
+        small_name: '精准科技',
         tax_code: '91112131337662767K'
       }, {
         id: 2,
         name: '深圳腾讯计算机系统有限公司',
+        small_name: '腾讯科技',
         tax_code: '12321312397662767F'
       }]
 
@@ -73,6 +84,7 @@ export default {
       this.dialogTitle = '新增公司'
       this.form = {
         name: '',
+        small_name: '',
         tax_code: ''
       }
       this.dialogFormVisible = true
